@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using ComfortScreen.Infrastructure;
 using MediaBrush = System.Windows.Media.Brush;
 using MediaColor = System.Windows.Media.Color;
 
@@ -20,6 +21,7 @@ public sealed class BreakOverlayWindow : Window
         Topmost = true;
         WindowStartupLocation = WindowStartupLocation.Manual;
         Background = new SolidColorBrush(MediaColor.FromArgb(225, 16, 24, 40));
+        Icon = AppIconProvider.GetWindowIconSource();
 
         var root = new Grid
         {

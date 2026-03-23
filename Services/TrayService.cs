@@ -1,4 +1,5 @@
 using ComfortScreen.Contracts;
+using ComfortScreen.Infrastructure;
 using Forms = System.Windows.Forms;
 
 namespace ComfortScreen.Services;
@@ -16,7 +17,7 @@ public sealed class TrayService : ITrayService
 
         _notifyIcon = new Forms.NotifyIcon
         {
-            Icon = System.Drawing.SystemIcons.Shield,
+            Icon = AppIconProvider.CreateTrayIcon(),
             Visible = true,
             Text = "ComfortScreen"
         };

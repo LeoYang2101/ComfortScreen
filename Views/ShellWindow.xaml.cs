@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
+using ComfortScreen.Infrastructure;
 using ComfortScreen.Services;
 using ComfortScreen.ViewModels;
 using ComfortScreen.Views.Pages;
@@ -23,6 +24,8 @@ public partial class ShellWindow : FluentWindow
         InitializeComponent();
 
         DataContext = _viewModel;
+        Icon = AppIconProvider.GetWindowIconSource();
+        ShellTitleBar.Icon = AppIconProvider.CreateTitleBarIconElement();
 
         Loaded += OnLoaded;
         Closing += OnClosing;

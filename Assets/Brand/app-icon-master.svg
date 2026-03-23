@@ -1,0 +1,31 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="app-bg" x1="128" y1="128" x2="896" y2="896" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39C8BF" />
+      <stop offset="1" stop-color="#2D6BEA" />
+    </linearGradient>
+    <linearGradient id="screen-fill" x1="200" y1="220" x2="824" y2="636" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#143B60" />
+      <stop offset="1" stop-color="#0E2239" />
+    </linearGradient>
+    <radialGradient id="glass-highlight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(336 260) rotate(38.5) scale(460 340)">
+      <stop stop-color="white" stop-opacity="0.34" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect x="96" y="96" width="832" height="832" rx="228" fill="url(#app-bg)" />
+  <circle cx="302" cy="256" r="210" fill="url(#glass-highlight)" />
+
+  <rect x="188" y="212" width="648" height="460" rx="132" fill="#0A2742" />
+  <rect x="210" y="234" width="604" height="416" rx="110" fill="url(#screen-fill)" stroke="#F2FCFF" stroke-opacity="0.88" stroke-width="20" />
+
+  <circle cx="664" cy="346" r="122" fill="#FFD86E" />
+  <circle cx="632" cy="316" r="76" fill="#FFF2B7" fill-opacity="0.45" />
+
+  <path d="M312 532C386 442 514 402 650 424C600 538 472 608 326 592C316 584 312 560 312 532Z" fill="#7DE5D2" />
+  <path d="M342 560C420 502 530 482 626 494C566 562 468 602 362 600C350 590 344 578 342 560Z" fill="#B7FFF1" fill-opacity="0.45" />
+
+  <path d="M454 674H570L628 734H396L454 674Z" fill="#E6FBFF" />
+  <rect x="402" y="734" width="220" height="36" rx="18" fill="#D5F6F3" />
+</svg>

@@ -27,8 +27,8 @@
             <Border Background="{DynamicResource ComfortScreenHeroBrush}"
                     CornerRadius="18"
                     Padding="6">
-                <ui:TitleBar Title="ComfortScreen"
-                             Icon="{ui:SymbolIcon EyeTracking20}" />
+                <ui:TitleBar x:Name="ShellTitleBar"
+                             Title="ComfortScreen" />
             </Border>
 
             <Border Grid.Row="1"

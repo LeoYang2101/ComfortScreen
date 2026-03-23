@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using ComfortScreen.Infrastructure;
 using MediaBrush = System.Windows.Media.Brush;
 using MediaColor = System.Windows.Media.Color;
 using WpfApplication = System.Windows.Application;
@@ -34,6 +35,7 @@ public sealed class ReminderWindow : Window
         WindowStyle = WindowStyle.None;
         AllowsTransparency = true;
         Background = WpfBrushes.Transparent;
+        Icon = AppIconProvider.GetWindowIconSource();
         PreviewKeyDown += OnPreviewKeyDown;
 
         var root = new Border
@@ -92,7 +94,21 @@ public sealed class ReminderWindow : Window
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
-        grid.Children.Add(
+        var titlePanel = new StackPanel
+        {
+            Orientation = WpfOrientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        titlePanel.Children.Add(
+            new System.Windows.Controls.Image
+            {
+                Width = 20,
+                Height = 20,
+                Margin = new Thickness(0, 0, 10, 0),
+                Source = AppIconProvider.GetTitleBarIconSource()
+            }
+        );
+        titlePanel.Children.Add(
             new TextBlock
             {
                 Text = Title,
@@ -102,6 +118,7 @@ public sealed class ReminderWindow : Window
                 Foreground = GetBrush("ComfortScreenDialogTitleTextBrush", MediaColor.FromRgb(30, 41, 59))
             }
         );
+        grid.Children.Add(titlePanel);
 
         var closeButton = new System.Windows.Controls.Button
         {

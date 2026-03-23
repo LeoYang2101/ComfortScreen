@@ -2,6 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+using ComfortScreen.Infrastructure;
 
 namespace ComfortScreen.Views;
 
@@ -24,6 +25,7 @@ public sealed class OverlayWindow : Window
         IsHitTestVisible = false;
         ShowActivated = false;
         Focusable = false;
+        Icon = AppIconProvider.GetWindowIconSource();
 
         SourceInitialized += (_, _) => EnableClickThrough();
     }

@@ -2,6 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using ComfortScreen.Infrastructure;
 using ComfortScreen.Models;
 using Wpf.Ui.Controls;
 using MediaBrush = System.Windows.Media.Brush;
@@ -32,6 +33,7 @@ public sealed class ThemedMessageWindow : Window
         ShowInTaskbar = false;
         AllowsTransparency = true;
         Background = WpfBrushes.Transparent;
+        Icon = AppIconProvider.GetWindowIconSource();
 
         PreviewKeyDown += OnPreviewKeyDown;
 
@@ -81,7 +83,21 @@ public sealed class ThemedMessageWindow : Window
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
-        grid.Children.Add(
+        var titlePanel = new StackPanel
+        {
+            Orientation = WpfOrientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center
+        };
+        titlePanel.Children.Add(
+            new System.Windows.Controls.Image
+            {
+                Width = 20,
+                Height = 20,
+                Margin = new Thickness(0, 0, 10, 0),
+                Source = AppIconProvider.GetTitleBarIconSource()
+            }
+        );
+        titlePanel.Children.Add(
             new WpfTextBlock
             {
                 Text = title,
@@ -91,6 +107,7 @@ public sealed class ThemedMessageWindow : Window
                 Foreground = GetBrush("ComfortScreenDialogTitleTextBrush", MediaColor.FromRgb(30, 41, 59))
             }
         );
+        grid.Children.Add(titlePanel);
 
         var closeButton = new System.Windows.Controls.Button
         {
