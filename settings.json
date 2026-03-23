@@ -1,0 +1,44 @@
+{
+  "FirstRunGuidePending": false,
+  "CurrentMode": "Day",
+  "FilterEnabled": true,
+  "GlobalTemperatureKelvin": 5600,
+  "GlobalBrightnessPercent": 88,
+  "GlobalFilterOpacity": 0.12,
+  "TimedModeEnabled": false,
+  "DayModeStart": "07:00:00",
+  "NightModeStart": "22:00:00",
+  "SolarModeEnabled": true,
+  "Latitude": 31.2304,
+  "Longitude": 121.4737,
+  "ReminderEnabled": true,
+  "ReminderIntervalMinutes": 20,
+  "ReminderHoldSeconds": 20,
+  "WorkRestEnabled": true,
+  "WorkMinutes": 50,
+  "RestMinutes": 10,
+  "ForceBreak": true,
+  "AllowBreakOverlayExit": true,
+  "Theme": "Simple",
+  "Hotkey": {
+    "Enabled": true,
+    "Modifiers": 3,
+    "VirtualKey": 121
+  },
+  "MonitorSettings": [
+    {
+      "DeviceName": "\\\\.\\DISPLAY1",
+      "Enabled": true,
+      "TemperatureKelvin": 5600,
+      "BrightnessPercent": 88,
+      "FilterOpacity": 0.12
+    },
+    {
+      "DeviceName": "\\\\.\\DISPLAY2",
+      "Enabled": true,
+      "TemperatureKelvin": 5600,
+      "BrightnessPercent": 88,
+      "FilterOpacity": 0.12
+    }
+  ]
+}

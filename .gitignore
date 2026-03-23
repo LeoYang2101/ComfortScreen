@@ -1,0 +1,28 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Generated test and coverage artifacts
+TestResults/
+*.coverage
+*.coveragexml
+
+# Logs
+startup-error.log
+*.log
+
+# NuGet local cache artifacts
+packages/
+*.nupkg
+
+# OS files
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,72 @@
+<Page x:Class="ComfortScreen.Views.Pages.ReminderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="提醒">
+    <ScrollViewer Padding="{StaticResource PagePadding}"
+                  VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Style="{StaticResource SectionTitleStyle}" Text="提醒与节律" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ui:Card Margin="0,0,12,16">
+                    <StackPanel>
+                        <TextBlock FontSize="18" FontWeight="SemiBold" Text="20-20-20 提醒" />
+                        <CheckBox Content="启用提醒"
+                                  IsChecked="{Binding ReminderEnabled}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="提醒间隔 (分钟)" />
+                        <ui:TextBox Text="{Binding ReminderIntervalText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="远眺时长 (秒)" />
+                        <ui:TextBox Text="{Binding ReminderHoldText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <ui:Button Margin="0,18,0,0"
+                                   Command="{Binding TestReminderCommand}"
+                                   Content="立即测试"
+                                   Appearance="Primary"
+                                   Icon="{ui:SymbolIcon Flash20}" />
+                    </StackPanel>
+                </ui:Card>
+
+                <ui:Card Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock FontSize="18" FontWeight="SemiBold" Text="工作 / 休息循环" />
+                        <CheckBox Content="启用工作/休息循环"
+                                  IsChecked="{Binding WorkRestEnabled}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="工作时长 (分钟)" />
+                        <ui:TextBox Text="{Binding WorkMinutesText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="休息时长 (分钟)" />
+                        <ui:TextBox Text="{Binding RestMinutesText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <CheckBox Content="休息期强制遮罩屏幕"
+                                  IsChecked="{Binding ForceBreak}" />
+                        <CheckBox Content="允许提前退出休息遮罩"
+                                  IsChecked="{Binding AllowBreakOverlayExit}" />
+
+                        <ui:Button Margin="0,18,0,0"
+                                   Command="{Binding ToggleWorkRestCommand}"
+                                   Content="{Binding WorkRestButtonText}"
+                                   Appearance="Primary"
+                                   Icon="{ui:SymbolIcon Timer20}" />
+                    </StackPanel>
+                </ui:Card>
+            </Grid>
+
+            <ui:Card>
+                <StackPanel>
+                    <TextBlock FontSize="18" FontWeight="SemiBold" Text="倒计时状态" />
+                    <TextBlock Margin="0,12,0,0" Text="{Binding CountdownStatusText}" />
+                    <ProgressBar Value="{Binding WorkRestProgress}" Maximum="100" />
+                </StackPanel>
+            </ui:Card>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,528 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+    <SolidColorBrush x:Key="ComfortScreenShellBackgroundBrush" Color="#F7F9FC" />
+    <SolidColorBrush x:Key="ComfortScreenPaneBackgroundBrush" Color="#ECF2FA" />
+    <SolidColorBrush x:Key="ComfortScreenHeroBrush" Color="#E5EFFF" />
+    <SolidColorBrush x:Key="ComfortScreenAccentBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenPrimaryTextBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenSecondaryTextBrush" Color="#526279" />
+    <SolidColorBrush x:Key="ComfortScreenSurfaceBrush" Color="#F8FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenSurfaceBorderBrush" Color="#1AFFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenNavigationHostBrush" Color="#F6FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenNavigationHostBorderBrush" Color="#26FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenDialogBackgroundBrush" Color="#FAFCFF" />
+    <SolidColorBrush x:Key="ComfortScreenDialogSurfaceBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenDialogTitleBackgroundBrush" Color="#EEF4FC" />
+    <SolidColorBrush x:Key="ComfortScreenDialogTitleBorderBrush" Color="#D7E1ED" />
+    <SolidColorBrush x:Key="ComfortScreenDialogTitleTextBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenDialogFooterBackgroundBrush" Color="#F4F8FC" />
+    <SolidColorBrush x:Key="ComfortScreenDialogIconBackgroundBrush" Color="#E5EFFF" />
+    <SolidColorBrush x:Key="ComfortScreenDialogIconForegroundBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenDialogCloseButtonHoverBrush" Color="#E1E9F3" />
+    <SolidColorBrush x:Key="ComfortScreenDialogPrimaryTextBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenDialogSecondaryTextBrush" Color="#526279" />
+    <SolidColorBrush x:Key="ComfortScreenDialogAccentBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenOverlayPrimaryTextBrush" Color="#F8FAFC" />
+    <SolidColorBrush x:Key="ComfortScreenOverlayAccentBrush" Color="#A4C6FF" />
+    <SolidColorBrush x:Key="ComfortScreenOverlayButtonBackgroundBrush" Color="#E5EFFF" />
+    <SolidColorBrush x:Key="ComfortScreenOverlayButtonForegroundBrush" Color="#1F2937" />
+    <SolidColorBrush x:Key="ComfortScreenInputBackgroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenInputHoverBackgroundBrush" Color="#F6FAFF" />
+    <SolidColorBrush x:Key="ComfortScreenInputBorderBrush" Color="#C8D5E6" />
+    <SolidColorBrush x:Key="ComfortScreenInputFocusBorderBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenInputForegroundBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenInputPlaceholderBrush" Color="#7B8CA4" />
+    <SolidColorBrush x:Key="ComfortScreenInputSelectionBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenInputSelectionForegroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenInputDisabledBackgroundBrush" Color="#EEF3F9" />
+    <SolidColorBrush x:Key="ComfortScreenInputDisabledForegroundBrush" Color="#97A7BB" />
+    <SolidColorBrush x:Key="ComfortScreenDropDownBackgroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenDropDownBorderBrush" Color="#C8D5E6" />
+    <SolidColorBrush x:Key="ComfortScreenDropDownItemForegroundBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenDropDownItemHoverBrush" Color="#E8F1FF" />
+    <SolidColorBrush x:Key="ComfortScreenDropDownItemSelectedBrush" Color="#D6E8FF" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxForegroundBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxBorderBrush" Color="#8FA5C2" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxBackgroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxHoverBackgroundBrush" Color="#F3F8FF" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxCheckedBackgroundBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxCheckedBorderBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenCheckBoxGlyphBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonPrimaryBackgroundBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenButtonPrimaryForegroundBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonPrimaryHoverBackgroundBrush" Color="#1D6CD0" />
+    <SolidColorBrush x:Key="ComfortScreenButtonPrimaryPressedBackgroundBrush" Color="#185AAF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonSecondaryBackgroundBrush" Color="#F3F8FF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonSecondaryForegroundBrush" Color="#1E293B" />
+    <SolidColorBrush x:Key="ComfortScreenButtonSecondaryBorderBrush" Color="#C8D5E6" />
+    <SolidColorBrush x:Key="ComfortScreenButtonSecondaryHoverBackgroundBrush" Color="#E6F0FF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonSecondaryPressedBackgroundBrush" Color="#D7E8FF" />
+    <SolidColorBrush x:Key="ComfortScreenButtonDisabledBackgroundBrush" Color="#E8EEF6" />
+    <SolidColorBrush x:Key="ComfortScreenButtonDisabledForegroundBrush" Color="#93A2B7" />
+    <SolidColorBrush x:Key="ComfortScreenButtonDisabledBorderBrush" Color="#D4DEE9" />
+    <SolidColorBrush x:Key="ComfortScreenSliderTrackBrush" Color="#D8E2F0" />
+    <SolidColorBrush x:Key="ComfortScreenSliderActiveTrackBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenSliderThumbBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ComfortScreenSliderThumbBorderBrush" Color="#247BE8" />
+    <SolidColorBrush x:Key="ComfortScreenSliderThumbHoverBrush" Color="#F5F9FF" />
+    <SolidColorBrush x:Key="ComfortScreenSliderThumbPressedBrush" Color="#E3EEFF" />
+    <SolidColorBrush x:Key="ComfortScreenSliderDisabledTrackBrush" Color="#E7EDF5" />
+    <SolidColorBrush x:Key="ComfortScreenSliderDisabledThumbBrush" Color="#F4F7FB" />
+    <SolidColorBrush x:Key="ComfortScreenSliderDisabledThumbBorderBrush" Color="#BAC7D8" />
+
+    <Thickness x:Key="PagePadding">28</Thickness>
+
+    <Style TargetType="Page">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="CaptionTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenSecondaryTextBrush}" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+    <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenPrimaryTextBrush}" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="0,0,0,18" />
+    </Style>
+
+    <Style x:Key="ComfortScreenBaseTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Margin" Value="0,8,0,0" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Padding" Value="14,9" />
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ComfortScreenInputBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenInputBorderBrush}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource ComfortScreenInputForegroundBrush}" />
+        <Setter Property="SelectionBrush" Value="{DynamicResource ComfortScreenInputSelectionBrush}" />
+        <Setter Property="SelectionTextBrush" Value="{DynamicResource ComfortScreenInputSelectionForegroundBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border x:Name="TextBoxBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="12"
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      Margin="{TemplateBinding Padding}"
+                                      VerticalAlignment="Center"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="TextBoxBorder" Property="BorderBrush" Value="{DynamicResource ComfortScreenInputFocusBorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="TextBoxBorder" Property="Background" Value="{DynamicResource ComfortScreenInputHoverBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="TextBoxBorder" Property="Background" Value="{DynamicResource ComfortScreenInputDisabledBackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputDisabledForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenInputFocusBorderBrush}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenInputHoverBackgroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenInputDisabledBackgroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputDisabledForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="TextBox" BasedOn="{StaticResource ComfortScreenBaseTextBoxStyle}" />
+
+    <Style TargetType="{x:Type ui:TextBox}" BasedOn="{StaticResource ComfortScreenBaseTextBoxStyle}">
+        <Setter Property="PlaceholderEnabled" Value="True" />
+        <Setter Property="ClearButtonEnabled" Value="False" />
+    </Style>
+
+    <Style x:Key="ComfortScreenComboBoxItemStyle" TargetType="ComboBoxItem">
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenDropDownItemForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border x:Name="ItemBorder"
+                            Margin="6,2"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="8"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ComfortScreenDropDownItemHoverBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ItemBorder" Property="Background" Value="{DynamicResource ComfortScreenDropDownItemSelectedBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputDisabledForegroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComfortScreenComboBoxToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="ToggleBorder"
+                            Background="{Binding Background, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                            BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                            BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter Margin="12,0,36,0"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Stretch"
+                                              RecognizesAccessKey="True" />
+                            <Path Width="10"
+                                  Height="6"
+                                  Margin="0,0,14,0"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Center"
+                                  Data="M 0 0 L 5 5 L 10 0"
+                                  Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ComboBox}}"
+                                  StrokeThickness="1.8"
+                                  StrokeStartLineCap="Round"
+                                  StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="Margin" Value="0,8,0,0" />
+        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputForegroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ComfortScreenInputBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenInputBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ComfortScreenComboBoxItemStyle}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid SnapsToDevicePixels="True">
+                        <ToggleButton x:Name="DropDownToggle"
+                                      Background="{TemplateBinding Background}"
+                                      BorderBrush="{TemplateBinding BorderBrush}"
+                                      BorderThickness="{TemplateBinding BorderThickness}"
+                                      Foreground="{TemplateBinding Foreground}"
+                                      IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                      Style="{StaticResource ComfortScreenComboBoxToggleButtonStyle}">
+                            <ContentPresenter Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
+                                              IsHitTestVisible="False" />
+                        </ToggleButton>
+
+                        <Popup x:Name="PART_Popup"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               Placement="Bottom"
+                               PopupAnimation="Fade">
+                            <Border Margin="0,6,0,0"
+                                    MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                                    Background="{DynamicResource ComfortScreenDropDownBackgroundBrush}"
+                                    BorderBrush="{DynamicResource ComfortScreenDropDownBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12"
+                                    SnapsToDevicePixels="True">
+                                <ScrollViewer Margin="4"
+                                              CanContentScroll="True">
+                                    <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenInputFocusBorderBrush}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenInputHoverBackgroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenInputDisabledBackgroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputDisabledForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="CheckBox">
+        <Setter Property="Margin" Value="0,8,0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenCheckBoxForegroundBrush}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border x:Name="CheckBoxBorder"
+                                Width="18"
+                                Height="18"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource ComfortScreenCheckBoxBackgroundBrush}"
+                                BorderBrush="{DynamicResource ComfortScreenCheckBoxBorderBrush}"
+                                BorderThickness="1.2"
+                                CornerRadius="6">
+                            <Path x:Name="CheckGlyph"
+                                  Width="10"
+                                  Height="8"
+                                  Data="M 1 4 L 4 7 L 9 1"
+                                  Stroke="{DynamicResource ComfortScreenCheckBoxGlyphBrush}"
+                                  StrokeThickness="2"
+                                  StrokeStartLineCap="Round"
+                                  StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round"
+                                  Visibility="Collapsed" />
+                        </Border>
+
+                        <ContentPresenter Grid.Column="1"
+                                          Margin="10,0,0,0"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{DynamicResource ComfortScreenCheckBoxHoverBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{DynamicResource ComfortScreenCheckBoxCheckedBackgroundBrush}" />
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource ComfortScreenCheckBoxCheckedBorderBrush}" />
+                            <Setter TargetName="CheckGlyph" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource ComfortScreenInputDisabledForegroundBrush}" />
+                            <Setter TargetName="CheckBoxBorder" Property="Background" Value="{DynamicResource ComfortScreenInputDisabledBackgroundBrush}" />
+                            <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource ComfortScreenButtonDisabledBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComfortScreenSliderRepeatButtonStyle" TargetType="RepeatButton">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="999" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComfortScreenSliderThumbStyle" TargetType="Thumb">
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Width" Value="20" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid>
+                        <Ellipse x:Name="ThumbBody"
+                                 Width="{TemplateBinding Width}"
+                                 Height="{TemplateBinding Height}"
+                                 Fill="{DynamicResource ComfortScreenSliderThumbBrush}"
+                                 Stroke="{DynamicResource ComfortScreenSliderThumbBorderBrush}"
+                                 StrokeThickness="2" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ThumbBody" Property="Fill" Value="{DynamicResource ComfortScreenSliderThumbHoverBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter TargetName="ThumbBody" Property="Fill" Value="{DynamicResource ComfortScreenSliderThumbPressedBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ThumbBody" Property="Fill" Value="{DynamicResource ComfortScreenSliderDisabledThumbBrush}" />
+                            <Setter TargetName="ThumbBody" Property="Stroke" Value="{DynamicResource ComfortScreenSliderDisabledThumbBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Slider">
+        <Setter Property="Margin" Value="0,12,0,0" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid Margin="0,2,0,2"
+                          SnapsToDevicePixels="True">
+                        <Track x:Name="PART_Track"
+                               VerticalAlignment="Center"
+                               Maximum="{TemplateBinding Maximum}"
+                               Minimum="{TemplateBinding Minimum}"
+                               Value="{Binding Value, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton x:Name="ActiveTrackButton"
+                                              Height="8"
+                                              Background="{DynamicResource ComfortScreenSliderActiveTrackBrush}"
+                                              Style="{StaticResource ComfortScreenSliderRepeatButtonStyle}" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource ComfortScreenSliderThumbStyle}" />
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton x:Name="InactiveTrackButton"
+                                              Height="8"
+                                              Background="{DynamicResource ComfortScreenSliderTrackBrush}"
+                                              Style="{StaticResource ComfortScreenSliderRepeatButtonStyle}" />
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ActiveTrackButton" Property="Background" Value="{DynamicResource ComfortScreenSliderDisabledTrackBrush}" />
+                            <Setter TargetName="InactiveTrackButton" Property="Background" Value="{DynamicResource ComfortScreenSliderDisabledTrackBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ProgressBar">
+        <Setter Property="Height" Value="12" />
+        <Setter Property="Margin" Value="0,12,0,0" />
+    </Style>
+
+    <Style TargetType="{x:Type ui:Card}">
+        <Setter Property="Margin" Value="0,0,0,16" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="Background" Value="{DynamicResource ComfortScreenSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenSurfaceBorderBrush}" />
+    </Style>
+
+    <Style TargetType="{x:Type ui:Button}">
+        <Setter Property="MinHeight" Value="38" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Background" Value="{DynamicResource ComfortScreenButtonSecondaryBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ComfortScreenButtonSecondaryForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenButtonSecondaryBorderBrush}" />
+        <Setter Property="MouseOverBackground" Value="{DynamicResource ComfortScreenButtonSecondaryHoverBackgroundBrush}" />
+        <Setter Property="MouseOverBorderBrush" Value="{DynamicResource ComfortScreenButtonSecondaryBorderBrush}" />
+        <Setter Property="PressedBackground" Value="{DynamicResource ComfortScreenButtonSecondaryPressedBackgroundBrush}" />
+        <Setter Property="PressedBorderBrush" Value="{DynamicResource ComfortScreenButtonSecondaryBorderBrush}" />
+        <Setter Property="PressedForeground" Value="{DynamicResource ComfortScreenButtonSecondaryForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:Button}">
+                    <Border x:Name="ButtonBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            SnapsToDevicePixels="True">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter x:Name="IconPresenter"
+                                              Content="{TemplateBinding Icon}"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True" />
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              Grid.Column="1"
+                                              Margin="8,0,0,0"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                              RecognizesAccessKey="True" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter TargetName="IconPresenter" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ContentPresenter" Property="Margin" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{Binding MouseOverBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{Binding MouseOverBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="{Binding PressedBackground, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{Binding PressedBorderBrush, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Appearance" Value="Primary">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenButtonPrimaryBackgroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource ComfortScreenButtonPrimaryForegroundBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenButtonPrimaryBackgroundBrush}" />
+                <Setter Property="MouseOverBackground" Value="{DynamicResource ComfortScreenButtonPrimaryHoverBackgroundBrush}" />
+                <Setter Property="MouseOverBorderBrush" Value="{DynamicResource ComfortScreenButtonPrimaryHoverBackgroundBrush}" />
+                <Setter Property="PressedBackground" Value="{DynamicResource ComfortScreenButtonPrimaryPressedBackgroundBrush}" />
+                <Setter Property="PressedBorderBrush" Value="{DynamicResource ComfortScreenButtonPrimaryPressedBackgroundBrush}" />
+                <Setter Property="PressedForeground" Value="{DynamicResource ComfortScreenButtonPrimaryForegroundBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource ComfortScreenButtonDisabledBackgroundBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource ComfortScreenButtonDisabledForegroundBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource ComfortScreenButtonDisabledBorderBrush}" />
+                <Setter Property="MouseOverBackground" Value="{DynamicResource ComfortScreenButtonDisabledBackgroundBrush}" />
+                <Setter Property="MouseOverBorderBrush" Value="{DynamicResource ComfortScreenButtonDisabledBorderBrush}" />
+                <Setter Property="PressedBackground" Value="{DynamicResource ComfortScreenButtonDisabledBackgroundBrush}" />
+                <Setter Property="PressedBorderBrush" Value="{DynamicResource ComfortScreenButtonDisabledBorderBrush}" />
+                <Setter Property="PressedForeground" Value="{DynamicResource ComfortScreenButtonDisabledForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

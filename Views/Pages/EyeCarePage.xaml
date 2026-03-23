@@ -1,0 +1,71 @@
+<Page x:Class="ComfortScreen.Views.Pages.EyeCarePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="护眼">
+    <ScrollViewer Padding="{StaticResource PagePadding}"
+                  VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <TextBlock Style="{StaticResource SectionTitleStyle}" Text="护眼策略" />
+            <TextBlock Style="{StaticResource CaptionTextStyle}" Text="{Binding CurrentModeLabel}" />
+
+            <ui:Card>
+                <StackPanel>
+                    <TextBlock FontSize="18" FontWeight="SemiBold" Text="快速模式" />
+                    <WrapPanel Margin="0,18,0,0">
+                        <ui:Button Command="{Binding ActivateDayModeCommand}"
+                                   Content="日间模式"
+                                   Appearance="Primary"
+                                   Margin="0,0,12,12" />
+                        <ui:Button Command="{Binding ActivateNightModeCommand}"
+                                   Content="夜间模式"
+                                   Appearance="Secondary"
+                                   Margin="0,0,12,12" />
+                        <ui:Button Command="{Binding ActivateReadingModeCommand}"
+                                   Content="阅读模式"
+                                   Appearance="Secondary"
+                                   Margin="0,0,12,12" />
+                        <ui:Button Command="{Binding ToggleFilterCommand}"
+                                   Content="{Binding FilterToggleText}"
+                                   Margin="0,0,12,12" />
+                    </WrapPanel>
+                </StackPanel>
+            </ui:Card>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ui:Card Margin="0,0,12,16">
+                    <StackPanel>
+                        <TextBlock FontSize="18" FontWeight="SemiBold" Text="定时切换" />
+                        <CheckBox Content="启用自定义时段自动切换"
+                                  IsChecked="{Binding TimedModeEnabled}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="日间开始 (HH:mm)" />
+                        <ui:TextBox Text="{Binding DayStartText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="夜间开始 (HH:mm)" />
+                        <ui:TextBox Text="{Binding NightStartText, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </ui:Card>
+
+                <ui:Card Grid.Column="1">
+                    <StackPanel>
+                        <TextBlock FontSize="18" FontWeight="SemiBold" Text="日出日落" />
+                        <CheckBox Content="按日出日落自动切换"
+                                  IsChecked="{Binding SolarModeEnabled}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="纬度" />
+                        <ui:TextBox Text="{Binding LatitudeText, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Margin="0,18,0,0" Style="{StaticResource CaptionTextStyle}" Text="经度" />
+                        <ui:TextBox Text="{Binding LongitudeText, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
+                </ui:Card>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
