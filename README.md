@@ -1,5 +1,9 @@
 # ComfortScreen
 
+软件下载：软件为绿色免安装软件，直接下载Release文件夹内压缩包解压运行即可。
+
+
+
 一款基于 `WPF + .NET 8` 构建的桌面护眼软件，采用 `CommunityToolkit.Mvvm`、`Microsoft.Extensions.Hosting` 和 `Wpf.Ui` 实现 MVVM 分层、依赖注入与 Win11 风格界面。
 
 ![ComfortScreen 概览页截图](docs/images/dashboard-overview.png)
