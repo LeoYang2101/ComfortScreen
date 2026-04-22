@@ -15,7 +15,10 @@ public sealed class ReminderDialogService : IReminderDialogService
             return;
         }
 
-        var window = new ReminderWindow(holdSeconds);
+        var window = new ReminderWindow(holdSeconds)
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen
+        };
 
         if (WpfApplication.Current.MainWindow is { IsLoaded: true, IsVisible: true } owner)
         {
