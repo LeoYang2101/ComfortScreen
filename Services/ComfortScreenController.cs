@@ -27,6 +27,7 @@ public sealed class ComfortScreenController : IDisposable
     private readonly DispatcherTimer _reminderTimer = new();
     private readonly DispatcherTimer _workRestTimer = new() { Interval = TimeSpan.FromSeconds(1) };
     private readonly DispatcherTimer _brightnessDebounceTimer = new() { Interval = TimeSpan.FromMilliseconds(700) };
+    private readonly DispatcherTimer _overlayRefreshTimer = new() { Interval = TimeSpan.FromSeconds(5) };
 
     private readonly Dictionary<string, MonitorSetting> _monitorMap = new(StringComparer.OrdinalIgnoreCase);
     private readonly ObservableCollection<MonitorTargetItem> _monitorTargets = new();
@@ -87,6 +88,7 @@ public sealed class ComfortScreenController : IDisposable
         _reminderTimer.Tick += (_, _) => ShowReminder();
         _workRestTimer.Tick += (_, _) => OnWorkRestTick();
         _brightnessDebounceTimer.Tick += OnBrightnessDebounceTick;
+        _overlayRefreshTimer.Tick += OnOverlayRefreshTick;
 
         LoadMonitorSettingsMap();
         RefreshMonitorsInternal();
@@ -150,6 +152,7 @@ public sealed class ComfortScreenController : IDisposable
         _scheduleTimer.Start();
         RestartReminderTimer();
         ApplyCurrentState();
+        UpdateOverlayRefreshTimer();
 
         if (Settings.FirstRunGuidePending && !_launchContext.IsStartupLaunch)
         {
@@ -168,6 +171,7 @@ public sealed class ComfortScreenController : IDisposable
         _reminderTimer.Stop();
         _workRestTimer.Stop();
         _brightnessDebounceTimer.Stop();
+        _overlayRefreshTimer.Stop();
         _overlayService.HideAll();
         _trayService.Dispose();
         _hotkeyService.Dispose();
@@ -459,6 +463,7 @@ public sealed class ComfortScreenController : IDisposable
             DebounceHardwareBrightness();
         }
 
+        UpdateOverlayRefreshTimer();
         NotifyStateChanged();
     }
 
@@ -637,6 +642,28 @@ public sealed class ComfortScreenController : IDisposable
         }
 
         await _brightnessService.TrySetBrightnessAsync((int)Math.Round(Settings.GlobalBrightnessPercent));
+    }
+
+    private void UpdateOverlayRefreshTimer()
+    {
+        if (Settings.FilterEnabled)
+        {
+            _overlayRefreshTimer.Start();
+            return;
+        }
+
+        _overlayRefreshTimer.Stop();
+    }
+
+    private void OnOverlayRefreshTick(object? sender, EventArgs e)
+    {
+        if (!Settings.FilterEnabled)
+        {
+            _overlayRefreshTimer.Stop();
+            return;
+        }
+
+        _overlayService.Apply(Settings);
     }
 
     private void RebindHotkey()

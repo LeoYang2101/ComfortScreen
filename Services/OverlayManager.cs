@@ -45,10 +45,7 @@ public sealed class OverlayManager : Contracts.IOverlayService
             var opacity = monitor.FilterOpacity + (dimFactor * 0.6);
 
             window.Apply(color, opacity);
-            if (!window.IsVisible)
-            {
-                window.Show();
-            }
+            window.EnsureVisibleAndTopmost();
         }
 
         var staleKeys = _windows.Keys.Where(key => !activeKeys.Contains(key)).ToList();
