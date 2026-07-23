@@ -31,7 +31,7 @@ public partial class ShellWindow : FluentWindow
         Closing += OnClosing;
 
         _viewModel.MinimizeRequested += (_, _) => Hide();
-        _controller.RestoreRequested += (_, _) => RestoreFromTray();
+        _controller.RestoreRequested += (_, _) => RestoreAndActivate();
         _controller.ExitRequested += (_, _) => ExitApplication();
     }
 
@@ -68,11 +68,22 @@ public partial class ShellWindow : FluentWindow
         _controller.Shutdown();
     }
 
-    private void RestoreFromTray()
+    public void RestoreAndActivate()
     {
-        Show();
-        WindowState = WindowState.Normal;
+        if (!IsVisible)
+        {
+            Show();
+        }
+
+        if (WindowState == WindowState.Minimized)
+        {
+            WindowState = WindowState.Normal;
+        }
+
         Activate();
+        Focus();
+        Topmost = true;
+        Topmost = false;
     }
 
     private void ExitApplication()

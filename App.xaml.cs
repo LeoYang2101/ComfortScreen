@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Threading;
 using ComfortScreen.Contracts;
+using ComfortScreen.Infrastructure;
 using ComfortScreen.Models;
 using ComfortScreen.Services;
 using ComfortScreen.ViewModels;
@@ -18,6 +19,8 @@ public partial class App : System.Windows.Application
     private static readonly string CrashLogPath = Path.Combine(AppContext.BaseDirectory, "startup-error.log");
     private static readonly string StartupArgument = "--startup";
     private IHost? _host;
+    private SingleInstanceCoordinator? _singleInstanceCoordinator;
+    private bool _pendingActivation;
 
     public static T GetService<T>()
         where T : notnull
@@ -46,8 +49,19 @@ public partial class App : System.Windows.Application
 
         try
         {
-            base.OnStartup(e);
             var launchContext = CreateLaunchContext(e.Args);
+            _singleInstanceCoordinator = new SingleInstanceCoordinator(LogException);
+            _singleInstanceCoordinator.ActivationRequested += OnActivationRequested;
+
+            var instanceResult = _singleInstanceCoordinator.Start(
+                notifyPrimary: !launchContext.IsStartupLaunch);
+            if (instanceResult == SingleInstanceStartResult.Secondary)
+            {
+                Shutdown(0);
+                return;
+            }
+
+            base.OnStartup(e);
 
             _host = CreateHostBuilder(launchContext).Build();
             _host.Start();
@@ -61,6 +75,12 @@ public partial class App : System.Windows.Application
             if (!launchContext.IsStartupLaunch)
             {
                 window.Show();
+            }
+
+            if (_pendingActivation)
+            {
+                _pendingActivation = false;
+                window.RestoreAndActivate();
             }
         }
         catch (Exception ex)
@@ -83,10 +103,38 @@ public partial class App : System.Windows.Application
         }
         finally
         {
-            _host?.Dispose();
+            try
+            {
+                _host?.Dispose();
+            }
+            finally
+            {
+                _singleInstanceCoordinator?.Dispose();
+            }
         }
 
         base.OnExit(e);
+    }
+
+    private void OnActivationRequested(object? sender, EventArgs e)
+    {
+        if (Dispatcher.HasShutdownStarted || Dispatcher.HasShutdownFinished)
+        {
+            return;
+        }
+
+        Dispatcher.BeginInvoke(
+            DispatcherPriority.Normal,
+            new Action(() =>
+            {
+                if (MainWindow is ShellWindow window)
+                {
+                    window.RestoreAndActivate();
+                    return;
+                }
+
+                _pendingActivation = true;
+            }));
     }
 
     private void OnDispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
